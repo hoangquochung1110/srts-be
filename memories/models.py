@@ -9,4 +9,7 @@ class Location(models.Model):
     comment = models.TextField(max_length=300, blank=True)
     lat = models.DecimalField(max_digits=11, decimal_places=7, blank=False, null=False)
     long = models.DecimalField(max_digits=11, decimal_places=7, blank=False, null=False)
-    users = models.ManyToManyField(USER_MODEL, related_name='location')
+    users = models.ManyToManyField(USER_MODEL, related_name='locations')
+
+    def __str__(self) -> str:
+        return self.name
