@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'drf_spectacular',
-    'rest_auth',
+    'dj_rest_auth',
     'rest_auth.registration',
     'allauth',
     'allauth.account',
@@ -154,7 +154,7 @@ SITE_ID = 1
 
 # allauth settings
 ACCOUNT_EMAIL_VERIFICATION = 'none'
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = '/'
 ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'https'
 SOCIALACCOUNT_PROVIDERS = {
     'facebook': {
