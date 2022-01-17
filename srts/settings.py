@@ -53,12 +53,15 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
+    "corsheaders",
+
 ]
 
 AUTH_USER_MODEL = 'users.User'
 
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -165,6 +168,31 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
+
+# CORS-HEADERS SETTINGS
+CORS_ORIGIN_WHITELIST = (
+    'https://localhost:3000',  # React default port = 3000
+    'http://localhost:8000',  # Django default port = 8000
+)
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "dnt",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
