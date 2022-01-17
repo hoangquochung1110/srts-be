@@ -22,5 +22,5 @@ class Location(models.Model):
         if not self.creation_date:
             self.creation_date = timezone.now()
 
-        self.lat_modified = timezone.now()
+        self.last_modified = timezone.now()
         return super(Location, self).save(*args, **kwargs)
